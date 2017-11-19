@@ -1,0 +1,29 @@
+<div>
+  <h3>Add Post</h3>
+  <form ecntype="multipart/form-data" method="post" [formGroup]="blogForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" name="title" formControlName="title" placeholder="Title"/>
+    </div>
+    <div class="form-group">
+      <label>Author</label>
+      <input type="text" class="form-control" name="title" formControlName="author" placeholder="Author"/>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" class="form-control" name="title" formControlName="description" placeholder="Description"/>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select formControlName="category" class="form-control">
+        <option *ngFor="let category of categories" [value]="category.category">{{category.category}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Body</label>
+      <textarea class="form-control" cols="10" rows="3" formControlName="articleBody" placeholder="Article body"></textarea>
+    </div>
+    <button type="submit" class="btn btn-info">Post</button>
+  </form>  
+</div>
+<pre>{{blogForm.value | json}}</pre>

@@ -1,0 +1,6 @@
+<div class="container" *ngIf="post">
+  {{post.title}}
+  {{post.publishedDate}}
+  <a routerLink="/post/edit/{{post._id}}" class="btn btn-primary">Edit Post</a>
+  <button class="btn btn-danger" (click)="deletePost()">Delete</button>
+</div>

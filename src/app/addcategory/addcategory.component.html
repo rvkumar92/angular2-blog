@@ -1,0 +1,11 @@
+<div>
+  <h3>Add Category</h3>
+  <form method="post" [formGroup]="categoryform" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label>Category</label>
+      <input type="text" class="form-control" name="category" formControlName="category" placeholder="category"/>
+    </div>
+    <button type="submit" class="btn btn-info">Add</button>
+  </form>  
+</div>
+<pre>{{categoryform.value | json}}</pre>

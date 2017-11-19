@@ -1,0 +1,14 @@
+<div *ngIf="blogs; else nopost">
+  <div *ngFor="let post of blogs" >
+    <h3> {{post.title}} </h3>
+    <p>posted in {{post.category}} by {{post.author}} {{post.publishedDate}}</p>
+    <img src={{post.image}} alt="blogimage"/>
+    <p>{{post.description}}</p>
+    <a routerLink="/post/{{post._id}}" class="btn btn-info">read more...</a>
+    {{post._id}}
+  </div>
+</div>
+
+<ng-template #nopost>
+  <p class="container">No blog posts available</p>
+</ng-template>
